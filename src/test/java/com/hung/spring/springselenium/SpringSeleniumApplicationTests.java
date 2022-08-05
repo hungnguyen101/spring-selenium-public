@@ -6,6 +6,8 @@ import org.springframework.boot.test.context.SpringBootTest;
 @SpringBootTest
 class SpringSeleniumApplicationTests {
 
+	// user salary address
+
 	@Test
 	void contextLoads() {
 	}
