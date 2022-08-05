@@ -13,6 +13,5 @@ public class User {
     public void printDetail(){
         System.out.println("Address :: " + this.address.getStreet());
         System.out.println("Salary :: " + this.salary.getAmount());
-
     }
 }
