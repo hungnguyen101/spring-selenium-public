@@ -3,13 +3,13 @@ package com.hung.spring.springselenium;
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
 
+
 @SpringBootTest
 class SpringSeleniumApplicationTests {
 
-	// user salary address
-
 	@Test
 	void contextLoads() {
+
 	}
 
 }
