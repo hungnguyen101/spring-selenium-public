@@ -3,7 +3,7 @@
 2. Click the **Run** button
 
 
-## II. Run test with Remote WebDriver (Selenium Grid server)
+## II. Execute tests with Remote WebDriver (Selenium Grid server)
 1. Start selenium grid server by using the **Docker** command below.
 
 ```shell
@@ -22,7 +22,7 @@ BROWSERSTACK_ACCESS_KEY=;
 3. Click the Run button
 4. If you are running your tests in a remote server or StackBrowser, change `spring.profiles.active=grid,stg`
 
-## III. Run test in Jenkins using Maven command
+## III. Execute tests in Jenkins using Maven command
 1. Run test in local machine
 ```shell
 mvn clean test -Dspring.profiles.active=qa -Dbrowser=chrome
