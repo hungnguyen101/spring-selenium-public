@@ -13,16 +13,17 @@ import org.springframework.context.annotation.Profile;
 
 import java.net.URL;
 
+
 @LazyConfiguration
-@Profile("remote")
-public class RemoteWebDriverConfig {
+@Profile("grid")
+public class GridConfig {
 
     @Value("${selenium.grid.url}")
     private URL url;
 
     @ThreadScopeBean
     @ConditionalOnProperty(name="browser", havingValue="firefox")
-    public WebDriver remoteFirefoxDriver(){
+    public WebDriver remoteFirefoxDriver() {
         return new RemoteWebDriver(this.url, new FirefoxOptions());
     }
 

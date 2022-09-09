@@ -8,17 +8,29 @@
 ```shell
 docker-compose up
 ```
-2. Add a new configuration with environment variables: `spring.profiles.active=remote`. Spring will run the Remote profile `application-remote.properties`.
-3. You can combine run stg environment in remote Grid server by using `spring.profiles.active=remote,stg`
-3. Click the Run button
-4. If you are running your tests in a remote server or StackBrowser, change `localhost` to your `server IP address`
-```shell
-selenium.grid.url=http://localhost:4444/wd/hub
-```
-## III. Run test in Jenkins using Maven command
 
+Spring will run the Remote profile `application-remote.properties`.
+
+2. Add a new configuration with environment variables: 
+   
+```shell
+spring.profiles.active=browserstack;
+BROWSERSTACK_USERNAME=nguynthhng_Ykg5qy;
+BROWSERSTACK_ACCESS_KEY=dUXKynsbrzLz18e6SoMP;
+```
+3. You can combine run stg environment in remote Grid server by using `spring.profiles.active=grid,stg`
+3. Click the Run button
+4. If you are running your tests in a remote server or StackBrowser, change `spring.profiles.active=grid,stg`
+
+## III. Run test in Jenkins using Maven command
+1. Run test in local machine
 ```shell
 mvn clean test -Dspring.profiles.active=qa -Dbrowser=chrome
 ```
+2. Run test in BrowserStack
+```shell
+ mvn clean test -Dspring.profiles.active=stg,browserstack -Dbrowser=chrome -DBROWSERSTACK_ACCESS_KEY=dUXKynsbrzLz18e6SoMP -DBROWSERSTACK_USERNAME=nguynthhng_Ykg5qy
+```
+
 - Each environment starts with a `-D`
 - Then Spring will scan those environments in the properties profile

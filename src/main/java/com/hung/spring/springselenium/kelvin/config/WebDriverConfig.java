@@ -11,7 +11,7 @@ import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Profile;
 
 @LazyConfiguration
-@Profile("!remote") //local run
+@Profile({"!grid & !browserstack"}) //local run, not import grid or browserstack profiles
 public class WebDriverConfig {
 
     @ThreadScopeBean
