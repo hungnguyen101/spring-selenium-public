@@ -1,10 +1,10 @@
-## I. Run local tests
+## I. Execute tests in local browsers
 1. Add a new configuration with environment variables: `spring.profiles.active=stg`. Spring will run the STG profile `application-stg.properties`. 
-2. Click the Run button
+2. Click the **Run** button
 
 
 ## II. Run test with Remote WebDriver (Selenium Grid server)
-1. Start selenium grid server by using the Docker command below.
+1. Start selenium grid server by using the **Docker** command below.
 
 ```shell
 docker-compose up
@@ -18,7 +18,7 @@ spring.profiles.active=browserstack;
 BROWSERSTACK_USERNAME=;
 BROWSERSTACK_ACCESS_KEY=;
 ```
-3. You can combine run stg environment in remote Grid server by using `spring.profiles.active=grid,stg`
+3. You can combine run STG environment in remote Grid server by using `spring.profiles.active=grid,stg`
 3. Click the Run button
 4. If you are running your tests in a remote server or StackBrowser, change `spring.profiles.active=grid,stg`
 
