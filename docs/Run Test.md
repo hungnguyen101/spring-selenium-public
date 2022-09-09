@@ -15,8 +15,8 @@ docker-compose up
    
 ```shell
 spring.profiles.active=browserstack;
-BROWSERSTACK_USERNAME=nguynthhng_Ykg5qy;
-BROWSERSTACK_ACCESS_KEY=dUXKynsbrzLz18e6SoMP;
+BROWSERSTACK_USERNAME=;
+BROWSERSTACK_ACCESS_KEY=;
 ```
 3. You can combine run stg environment in remote Grid server by using `spring.profiles.active=grid,stg`
 3. Click the Run button
