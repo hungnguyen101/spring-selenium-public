@@ -4,12 +4,12 @@
 
 
 ## II. Run test with Remote WebDriver (Selenium Grid server)
-1. Start selenium grid server by using the Docker command:
+1. Start selenium grid server by using the Docker command below.
+
 ```shell
 docker-compose up
 ```
 
-Spring will run the Remote profile `application-remote.properties`.
 
 2. Add a new configuration with environment variables: 
    
