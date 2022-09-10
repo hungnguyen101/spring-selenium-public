@@ -28,7 +28,10 @@ mvn clean test -Dspring.profiles.active=qa -Dbrowser=chrome
 ```
 2. Run test in **BrowserStack**
 ```shell
- mvn clean test -Dspring.profiles.active=stg,browserstack -Dbrowser=chrome -DBROWSERSTACK_ACCESS_KEY=dUXKynsbrzLz18e6SoMP -DBROWSERSTACK_USERNAME=nguynthhng_Ykg5qy
+mvn clean test  -Dsurefire.suiteXmlFiles=testsuite/test-ng.xml -DBROWSERSTACK_ACCESS_KEY=qz8b36FYMWQWXZQGieQq -DBROWSERSTACK_USERNAME=alexalexdias1  -Dbrowser=chrome -Dspring.profiles.active=stg,browserstack
 ```
 - Each environment starts with a `-D`
+  - Dspring.profiles.active: profile list
+  - Dsurefire.suiteXmlFiles: xml
+  - Dbrowser: browser name
 - Then Spring will scan those environments in the properties profile
