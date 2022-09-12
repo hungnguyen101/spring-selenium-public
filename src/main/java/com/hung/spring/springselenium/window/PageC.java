@@ -1,11 +1,12 @@
 package com.hung.spring.springselenium.window;
 
 import com.hung.spring.springselenium.kelvin.annotation.LazyConfiguration;
+import com.hung.spring.springselenium.kelvin.annotation.Window;
 import com.hung.spring.springselenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 
-@LazyConfiguration
+@Window("Page C")
 public class PageC  extends Base {
 
     @FindBy(id = "area" )

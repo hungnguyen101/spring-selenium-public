@@ -21,7 +21,7 @@ public class MainPage extends Base {
     public void launchAllWindows(){
         for (int i = 0; i < links.size(); i++) {
             links.get(i).click();
-           // this.wait.until(ExpectedConditions.numberOfWindowsToBe(i + 2));
+            this.wait.until(ExpectedConditions.numberOfWindowsToBe(i + 2));
         }
     }
 

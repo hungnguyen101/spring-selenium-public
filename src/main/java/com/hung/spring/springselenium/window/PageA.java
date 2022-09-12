@@ -1,17 +1,18 @@
 package com.hung.spring.springselenium.window;
 
-import com.hung.spring.springselenium.kelvin.annotation.LazyConfiguration;
+import com.hung.spring.springselenium.kelvin.annotation.TakeScreenShot;
+import com.hung.spring.springselenium.kelvin.annotation.Window;
 import com.hung.spring.springselenium.page.Base;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.springframework.stereotype.Service;
 
-@LazyConfiguration
+@Window("Page A")
 public class PageA extends Base {
     
     @FindBy(id = "area" )
     private WebElement textArea;
 
+    @TakeScreenShot
     public void addToArea(final String msg){
         this.textArea.sendKeys(msg);
     }
