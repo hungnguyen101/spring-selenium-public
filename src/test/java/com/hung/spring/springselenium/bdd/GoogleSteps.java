@@ -10,7 +10,7 @@ import io.cucumber.spring.CucumberContextConfiguration;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.testng.Assert;
 
-@SpringBootTest()
+@SpringBootTest
 @CucumberContextConfiguration
 public class GoogleSteps {
 

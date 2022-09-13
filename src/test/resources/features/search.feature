@@ -9,8 +9,8 @@ Feature: Google Search
 
    Examples:
      | keyword  | count |
-     | selenium | 2     |
-     | java     | 5     |
+     | selenium | 20    |
+     | java     | 50    |
      | spring   | 100   |
 
 

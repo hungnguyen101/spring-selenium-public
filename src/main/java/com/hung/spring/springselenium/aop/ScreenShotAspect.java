@@ -16,6 +16,6 @@ public class ScreenShotAspect {
 
     @After("@annotation(takeScreenshot)")
     public void after(TakeScreenShot takeScreenshot) throws Exception {
-        this.screenShotService.takeScreenshot("haha");
+        this.screenShotService.takeScreenshot("screenshotName");
     }
 }
