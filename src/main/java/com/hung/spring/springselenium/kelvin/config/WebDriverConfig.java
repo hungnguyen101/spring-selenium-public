@@ -5,6 +5,7 @@ import com.hung.spring.springselenium.kelvin.annotation.ThreadScopeBean;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
 import org.openqa.selenium.safari.SafariDriver;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
@@ -17,14 +18,14 @@ public class WebDriverConfig {
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver(){
-        WebDriverManager.chromedriver().browserVersion("104.0.5112.79").setup();
+        WebDriverManager.chromedriver().browserVersion("latest").setup();
         return new ChromeDriver();
     }
 
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefoxDriver(){
-        WebDriverManager.firefoxdriver().browserVersion("89.0").setup();
+        WebDriverManager.firefoxdriver().browserVersion("latest").setup();
         return new FirefoxDriver();
     }
 
@@ -33,6 +34,13 @@ public class WebDriverConfig {
     public WebDriver safariDriver(){
         WebDriverManager.safaridriver().setup();
         return new SafariDriver();
+    }
+
+    @ThreadScopeBean
+    @ConditionalOnProperty(name = "browser", havingValue = "edge")
+    public WebDriver edgeDriver(){
+        WebDriverManager.edgedriver().setup();
+        return new EdgeDriver();
     }
 
 }
