@@ -3,6 +3,7 @@
          xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
     <modelVersion>4.0.0</modelVersion>
     <parent>
+        <!--https://mvnrepository.com/artifact/org.springframework.boot/spring-boot-dependencies/2.7.2-->
         <groupId>org.springframework.boot</groupId>
         <artifactId>spring-boot-starter-parent</artifactId>
         <version>2.7.2</version>
@@ -18,7 +19,8 @@
         <java.version>11</java.version>
         <selenium.version>4.3.0</selenium.version>
         <webdrivermanager.version>5.2.3</webdrivermanager.version>
-        <cucumber.version>7.6.0</cucumber.version>
+        <cucumber.version>7.8.0</cucumber.version>
+        <testng.version>7.6.0</testng.version>
     </properties>
 
     <dependencies>
@@ -91,7 +93,7 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>rest-assured</artifactId>
-            <version>5.2.0</version>
+            <version>4.5.1</version>
             <scope>test</scope>
             <exclusions><!-- https://www.baeldung.com/maven-version-collision -->
                 <exclusion>
@@ -107,7 +109,7 @@
         <dependency>
             <groupId>io.rest-assured</groupId>
             <artifactId>json-schema-validator</artifactId>
-            <version>5.2.0</version>
+            <version>4.5.1</version>
             <scope>test</scope>
         </dependency>
 
@@ -150,7 +152,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.6.0</version>
+            <version>${testng.version}</version>
             <scope>compile</scope>
         </dependency>
 
