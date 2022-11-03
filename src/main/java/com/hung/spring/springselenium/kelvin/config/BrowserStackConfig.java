@@ -37,6 +37,7 @@ public class BrowserStackConfig {
     }
 
     @ThreadScopeBean
+    @ConditionalOnProperty(name="browser", havingValue="chrome")
     @ConditionalOnMissingBean
     public WebDriver remoteChromeDriver() throws MalformedURLException {
         // Add the following capabilities to your test script
@@ -47,6 +48,38 @@ public class BrowserStackConfig {
         HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
         browserstackOptions.put("os", "Windows");
         browserstackOptions.put("osVersion", "10");
+
+        capabilities.setCapability("bstack:options", browserstackOptions);
+        return new RemoteWebDriver(this.url, capabilities);
+    }
+
+    @ThreadScopeBean
+    @ConditionalOnProperty(name="browser", havingValue="safari")
+    public WebDriver remoteSafariDriver() throws MalformedURLException {
+        // Add the following capabilities to your test script
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "Safari");
+        capabilities.setCapability("browserVersion", "latest");
+
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("os", "OS X");
+        browserstackOptions.put("osVersion", "Monterey");
+
+        capabilities.setCapability("bstack:options", browserstackOptions);
+        return new RemoteWebDriver(this.url, capabilities);
+    }
+
+    @ThreadScopeBean
+    @ConditionalOnProperty(name="browser", havingValue="edge")
+    public WebDriver remoteEdgeDriver() throws MalformedURLException {
+        // Add the following capabilities to your test script
+        DesiredCapabilities capabilities = new DesiredCapabilities();
+        capabilities.setCapability("browserName", "Edge");
+        capabilities.setCapability("browserVersion", "latest");
+
+        HashMap<String, Object> browserstackOptions = new HashMap<String, Object>();
+        browserstackOptions.put("os", "Windows");
+        browserstackOptions.put("osVersion", "11");
 
         capabilities.setCapability("bstack:options", browserstackOptions);
         return new RemoteWebDriver(this.url, capabilities);
