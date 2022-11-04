@@ -7,6 +7,8 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.firefox.FirefoxOptions;
+import org.openqa.selenium.firefox.FirefoxProfile;
 import org.openqa.selenium.safari.SafariDriver;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.context.annotation.Profile;
@@ -18,15 +20,25 @@ public class WebDriverConfig {
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver(){
-        WebDriverManager.chromedriver().browserVersion("latest").setup();
+        WebDriverManager.chromedriver().setup();
         return new ChromeDriver();
     }
 
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "firefox")
     public WebDriver firefoxDriver(){
-        WebDriverManager.firefoxdriver().browserVersion("latest").setup();
-        return new FirefoxDriver();
+
+        //Additional settings for firefox browser
+        FirefoxProfile profile = new FirefoxProfile();
+        profile.setPreference("browser.helperApps.neverAsk.saveToDisk", "text/plain,application/pdf");//Mime type
+        profile.setPreference("browser.download.manager.showWhenStarting", false);
+        profile.setPreference("pdfjs.disabled", true); // only for pdf file
+
+        FirefoxOptions option = new FirefoxOptions();
+        option.setProfile(profile);
+
+        WebDriverManager.firefoxdriver().browserVersion("106").setup();
+        return new FirefoxDriver(option);
     }
 
     @ThreadScopeBean
