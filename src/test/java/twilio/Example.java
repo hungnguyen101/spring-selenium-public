@@ -11,12 +11,12 @@ public class Example {
 //    public static final String ACCOUNT_SID = System.getenv("TWILIO_ACCOUNT_SID");
 //    public static final String AUTH_TOKEN = System.getenv("TWILIO_AUTH_TOKEN");
 
-    public static final String ACCOUNT_SID = "ACc4948a71b321a9b96bfce58c21315411";
-    public static final String AUTH_TOKEN = "d6986fabc940ef02b06c2b0e09ed786e";
+    public static final String ACCOUNT_SID = "";
+    public static final String AUTH_TOKEN = "";
 
     public static void main(String[] args) {
 
-        System.out.println(getOTP("2012012011"));
+        System.out.println(getOTP(""));
 
     }
 
