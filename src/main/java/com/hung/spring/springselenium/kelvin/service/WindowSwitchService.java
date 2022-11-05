@@ -1,6 +1,7 @@
 package com.hung.spring.springselenium.kelvin.service;
 
 import com.hung.spring.springselenium.kelvin.annotation.LazyConfiguration;
+import org.openqa.selenium.JavascriptExecutor;
 import org.openqa.selenium.WebDriver;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.ApplicationContext;

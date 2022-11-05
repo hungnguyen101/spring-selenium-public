@@ -1,19 +1,25 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="The internet tests" parallel="tests" thread-count="2">
+<suite name="The internet tests" parallel="tests" thread-count="1">
 
     <listeners>
     </listeners>
 
-    <test name="Upload file">
+    <test name="Upload file" enabled="false">
         <classes>
             <class name="com.hung.spring.springselenium.theinternettest.FileUploadTest"></class>
         </classes>
     </test>
 
-    <test name="Download file">
+    <test name="Download file" enabled="false">
         <classes>
             <class name="com.hung.spring.springselenium.theinternettest.FileDownloadTest"></class>
+        </classes>
+    </test>
+
+    <test name="Scroll test">
+        <classes>
+            <class name="com.hung.spring.springselenium.theinternettest.ScrollTest"></class>
         </classes>
     </test>
 
