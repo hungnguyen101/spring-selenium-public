@@ -1,13 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd">
-<suite name="The internet tests" parallel="tests" thread-count="1">
+<suite name="The internet tests" parallel="tests" thread-count="2">
 
     <listeners>
     </listeners>
 
-    <test name="Upload file test">
+    <test name="Upload file">
         <classes>
             <class name="com.hung.spring.springselenium.theinternettest.FileUploadTest"></class>
+        </classes>
+    </test>
+
+    <test name="Download file">
+        <classes>
+            <class name="com.hung.spring.springselenium.theinternettest.FileDownloadTest"></class>
         </classes>
     </test>
 

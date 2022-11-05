@@ -18,8 +18,8 @@ public class SpringBaseTestNGTest extends AbstractTestNGSpringContextTests {
         this.driver.manage().window().maximize();
     }
 
-//    @AfterClass
-//    public void quitDriver(){
-//        this.driver.quit();
-//    }
+    @AfterClass
+    public void quitDriver(){
+        this.driver.quit();
+    }
 }
