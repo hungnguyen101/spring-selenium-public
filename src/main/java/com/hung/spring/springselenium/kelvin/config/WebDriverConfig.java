@@ -20,7 +20,7 @@ public class WebDriverConfig {
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "chrome")
     public WebDriver chromeDriver(){
-        WebDriverManager.chromedriver().setup();
+        WebDriverManager.chromedriver().browserVersion(System.getProperty("version")).setup();
         return new ChromeDriver();
     }
 
@@ -37,21 +37,22 @@ public class WebDriverConfig {
         FirefoxOptions option = new FirefoxOptions();
         option.setProfile(profile);
 
-        WebDriverManager.firefoxdriver().browserVersion("106").setup();
+
+        WebDriverManager.firefoxdriver().browserVersion(System.getProperty("version")).setup();
         return new FirefoxDriver(option);
     }
 
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "safari")
     public WebDriver safariDriver(){
-        WebDriverManager.safaridriver().setup();
+        WebDriverManager.safaridriver().browserVersion(System.getProperty("version")).setup();
         return new SafariDriver();
     }
 
     @ThreadScopeBean
     @ConditionalOnProperty(name = "browser", havingValue = "edge")
     public WebDriver edgeDriver(){
-        WebDriverManager.edgedriver().setup();
+        WebDriverManager.edgedriver().browserVersion(System.getProperty("version")).setup();
         return new EdgeDriver();
     }
 

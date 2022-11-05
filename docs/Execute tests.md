@@ -24,7 +24,7 @@ BROWSERSTACK_ACCESS_KEY=;
 ## III. Execute tests in Jenkins using Maven command
 1. Run test in local machine
 ```shell
-mvn clean test -Dsurefire.suiteXmlFiles=testsuite/the-internet-test.xml -Dspring.profiles.active=qa -Dbrowser=firefox
+mvn clean test -Dsurefire.suiteXmlFiles=testsuite/the-internet-test.xml -Dspring.profiles.active=qa -Dbrowser=firefox -Dversion=106
 ```
 2. Run test in **BrowserStack**
 ```shell
