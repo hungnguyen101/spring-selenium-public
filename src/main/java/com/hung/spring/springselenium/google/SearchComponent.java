@@ -27,6 +27,7 @@ public class SearchComponent extends Base {
     }
 
     public void search(Map<String, String> searchDetails){
+        System.out.println(this.searchStrategy);
         this.searchStrategy.search(searchDetails);
     }
 
