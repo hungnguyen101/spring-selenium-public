@@ -11,15 +11,15 @@ import org.testng.annotations.BeforeClass;
 public class SpringBaseTestNGTest extends AbstractTestNGSpringContextTests {
 
     @LazyAutowired
-    private WebDriver driver;
+    protected WebDriver driver;
 
     @BeforeClass
     public void setupDriver(){
         this.driver.manage().window().maximize();
     }
-
-    @AfterClass
-    public void quitDriver(){
-        this.driver.quit();
-    }
+//
+//    @AfterClass
+//    public void quitDriver(){
+//        this.driver.quit();
+//    }
 }

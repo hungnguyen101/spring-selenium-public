@@ -5,8 +5,10 @@ import com.hung.spring.springselenium.page.Base;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
+import org.openqa.selenium.support.PageFactory;
 
 import java.util.List;
+import java.util.Map;
 
 @PageFragment
 public class SearchComponent extends Base {
@@ -14,16 +16,18 @@ public class SearchComponent extends Base {
     @FindBy(name = "q")
     private WebElement searchBox;
 
-    @FindBy(name = "btnK")
-    private List<WebElement> searchBtns;
+    private SearchStrategy searchStrategy;
 
-    public void search(final String keyword){
-        this.searchBox.sendKeys(keyword);
-        this.searchBox.sendKeys(Keys.TAB);
-        this.searchBtns.stream()
-                .filter(e -> e.isDisplayed() && e.isEnabled())
-                .findFirst()
-                .ifPresent(WebElement::click);
+    public void setSearchStrategy(SearchStrategy searchStrategy){
+        this.searchStrategy = searchStrategy;
+        System.out.println(this.searchStrategy);
+        PageFactory.initElements(driver, this.searchStrategy);
+        System.out.println(this.searchStrategy);
+
+    }
+
+    public void search(Map<String, String> searchDetails){
+        this.searchStrategy.search(searchDetails);
     }
 
     @Override
